@@ -1,0 +1,80 @@
+@import "../../variables.scss";
+
+.contentSection {
+  flex-wrap: wrap;
+  padding-bottom: 80px;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  padding-top: 75px;
+
+  @media (max-width: $laptop) {
+    padding-top: 0;
+  }
+
+  @media (max-width: $laptop) and (min-width: $tablet) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $maxMobile) {
+    flex-wrap: wrap;
+  }
+}
+
+.bottom {
+  margin-top: 45px;
+
+  @media (max-width: $laptop) and (min-width: $tablet) {
+    margin-top: 0;
+  }
+}
+
+.pic {
+  width: 100%;
+  max-width: $manBackgroundWidth;
+  margin: 0 0 0 165px;
+  background-image: url("man.png");
+  background-color: $manBackgroundFallback;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: $laptop) {
+    height: 695px;
+    margin: 0 auto;
+  }
+}
+
+.text {
+  max-width: 610px;
+  min-width: 400px;
+  margin-left: 50px;
+  padding-right: 20px;
+
+  @media (max-width: $laptop) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: $maxMobile) {
+    min-width: auto;
+    padding: 0 35px;
+  }
+}
+
+.p {
+  font-weight: 300;
+}
+
+.title {
+  margin-top: 70px;
+
+  @media (max-width: $maxMobile) {
+    margin-top: 40px;
+  }
+}
+
+.ps {
+  margin-top: 40px;
+}

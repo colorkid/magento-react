@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './global.scss';
+import Nav from './componets/Nav/Nav';
+import AboutMe from './pages/AboutMe/AboutMe';
+import Home from './pages/Home/Home';
+import {Route} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = ({nav: {links}}) => {
+  return <>
+    <header className={'header'}>
+      <Nav links={links} top={true}/>
+    </header>
+    <main>
+      <Route exact path='/' render={() => <Home />}/>
+      <Route path='/aboutme' render={() => <AboutMe />}/>
+      <Route path='/portfolio' render={() => <AboutMe />}/>
+      <Route path='/contact' render={() => <Home />}/>
+    </main>
+  </>
+};
 
-export default App;
+let mapStateToProps = state => ({
+  nav: state.navLinks
+});
+
+export default connect(mapStateToProps, null)(App);

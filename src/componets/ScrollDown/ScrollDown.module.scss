@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.scrollDown {
+  position: relative;
+  bottom: 80px;
+
+  @media (max-width: $laptop){
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: $scrollDownIconWidth;
+    height: $scrollDownIconWidth;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("arrowsWhite.png");
+  }
+}
+
+.text {
+  font-size: $secondaryFontSize;
+  color: $primaryWhite;
+  text-transform: uppercase;
+}
+
+.down {
+  bottom: 0;
+
+  @media (max-width: $laptop){
+    display: block;
+  }
+
+  @media (max-width: $maxMobile){
+    display: none;
+  }
+
+  &:after {
+    top: 50px;
+  }
+}
