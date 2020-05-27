@@ -1,5 +1,5 @@
 import React from 'react';
-import './global.scss';
+import './styles/global.scss';
 import Nav from './componets/Nav/Nav';
 import AboutMe from './pages/AboutMe/AboutMe';
 import Home from './pages/Home/Home';
